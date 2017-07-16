@@ -1,0 +1,32 @@
+<%- include('header') %>
+  <div class="ui segment">
+    <% if (error) { %>
+      <div class="ui error message">
+        <%= error %>
+      </div>
+      <% } %>
+        <div class="ui header">Sign up</div>
+        <form class="ui large form" method="post">
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="user icon"></i>
+              <input type="text" name="username" placeholder="Enter your username...">
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="lock icon"></i>
+              <input type="password" name="password" placeholder="Enter your password...">
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="lock icon"></i>
+              <input type="password" name="password-repeat" placeholder="Repeat your password...">
+            </div>
+          </div>
+          <button class="ui primary large button" type="submit">Sign up</button>
+          <div class="ui error message"></div>
+        </form>
+  </div>
+  <%- include('footer') %>

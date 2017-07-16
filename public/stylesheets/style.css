@@ -1,0 +1,38 @@
+div.ui.menu {
+  background: linear-gradient(to bottom, #086ed5, #055db5);
+  border-radius: 0;
+}
+
+div.ui.menu a.item {
+  color: whitesmoke !important;
+  font-size: 1.1em;
+}
+
+div.ui.menu .item.active {
+  color: whitesmoke;
+  background: linear-gradient(to bottom, #055fb8, #095fb3);
+}
+
+
+/* button getstart */
+
+div.hidden.content a {
+  color: white;
+}
+
+div.hidden.content a:hover {
+  font-size: 1.1em;
+}
+
+
+/* About */
+
+.ui.modal .header {
+  text-align: center;
+}
+
+.content div {
+  font-size: 1.1em;
+  text-align: center;
+  margin-bottom: 15px;
+}

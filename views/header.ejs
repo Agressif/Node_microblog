@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>
+    <%= title %>
+  </title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="/stylesheets/semantic.min.css" />
+</head>
+
+<body>
+  <div class="ui container">
+    <div class="ui stackable menu">
+      <div class="item">
+        <img src="/favicon.ico">
+      </div>
+      <a class="item" href="/home">Home </a>
+      <% if (!user) { %>
+        <a class="item" href="/signin">Sign in </a>
+        <a class="item" href="/signup">Sign up </a>
+        <% } else { %>
+          <a class="item" href="/signout">Sign out </a>
+          <% } %>
+            <a class="right item" onclick="show()">About </a>
+            <div class="ui small modal">
+              <div class="header">Microblog</div>
+              <div class="content">
+                <div>
+                  <button class="ui circular wechat positive icon button">
+        <i class="wechat icon large"></i>
+      </button> sylarfarewell
+                </div>
+                <div>
+                  <button class="ui circular github icon button">
+        <i class="github icon large"></i>
+      </button>
+                  <a href="https://github.com/Agressif" target="_blank">https://github.com/Agressif</a>
+                </div>
+                <div>
+                  <button class="ui circular google plus icon button">
+        <i class="google plus icon large"></i>
+      </button> sylarfarewell@gmail.com
+                </div>
+              </div>
+              <div class="actions">
+                <div class="ui primary deny right labeled icon button">
+                  Close
+                  <i class="close icon"></i>
+                </div>
+              </div>
+            </div>
+    </div>
+  </div>
+
+  <div id="container" class="ui container">
