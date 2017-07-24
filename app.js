@@ -23,21 +23,27 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(flash());
 
 app.use(session({
   secret: settings.cookieSecret,
   resave: true,
-  saveUninitialized: true,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 86400
+  },
   store: new MongoStore({
     url: `mongodb://localhost/${settings.db}`
   }),
 }));
 
+app.use(flash());
 app.use(function(req, res, next) {
   res.locals.user = req.session.user;
-  res.locals.success = req.flash('success').toString();
-  res.locals.error = req.flash('error').toString();
+  res.locals.post = req.session.post;
+  var error = req.flash('error');
+  res.locals.error = error.length ? error : null;
+  var success = req.flash('success');
+  res.locals.success = success.length ? success : null;
   next();
 });
 
