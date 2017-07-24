@@ -1,10 +1,10 @@
 $(() => {
   init();
-  // if ($('.ui.success.message').length > 0) {
-  //   $('.ui.success.message').fadeOut(1000)
-  // } else if ($('.ui.error.message').length > 0) {
-  //   $('.ui.error.message').fadeOut(1000)
-  // }
+  if ($('.ui.success.message').length > 0) {
+    $('.ui.success.message').fadeOut(1000)
+  } else if ($('.ui.error.message').length > 0) {
+    $('.ui.error.message').fadeOut(1000)
+  }
 });
 
 function init() {
