@@ -1,31 +1,38 @@
 <%- include('header') %>
-  <div class="ui segment">
+  <div class="ui stacked center aligned segment">
     <% if (error) { %>
       <div class="ui error message">
         <%= error %>
       </div>
       <% } %>
-        <div class="ui header">Sign up</div>
+        <div class="ui huge header">Create your account</div>
         <form class="ui large form" method="post">
-          <div class="field">
+          <div class="six wide field">
             <div class="ui left icon input">
               <i class="user icon"></i>
               <input type="text" name="username" placeholder="Enter your username...">
             </div>
           </div>
-          <div class="field">
+          <div class="six wide field">
             <div class="ui left icon input">
               <i class="lock icon"></i>
               <input type="password" name="password" placeholder="Enter your password...">
             </div>
           </div>
-          <div class="field">
+          <div class="six wide field">
             <div class="ui left icon input">
               <i class="lock icon"></i>
               <input type="password" name="password-repeat" placeholder="Repeat your password...">
             </div>
           </div>
-          <button class="ui primary large button" type="submit">Sign up</button>
+          <div class="six wide field">
+            <button class="ui fluid primary large button" type="submit">Sign up</button>
+          </div>
+          <div class="six wide field">
+            <div class="ui floating message">
+              Already sign up? <a href="/signin">Sign in</a>
+            </div>
+          </div>
           <div class="ui error message"></div>
         </form>
   </div>

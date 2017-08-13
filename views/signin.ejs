@@ -1,5 +1,5 @@
 <%- include('header') %>
-  <div class="ui segment">
+  <div class="ui stacked center aligned segment">
     <% if (success) { %>
       <div class="ui success message">
         <%= success %>
@@ -10,26 +10,29 @@
             <%= error %>
           </div>
           <% } %>
-            <div class="ui header">Sign in</div>
+            <div class="ui huge header">Log-in to your account</div>
             <form class="ui large form" method="post">
-              <div class="field">
+              <div class="six wide field">
                 <div class="ui left icon input">
                   <i class="user icon"></i>
                   <input type="text" name="username" placeholder="Enter your username...">
                 </div>
               </div>
-              <div class="field">
+              <div class="six wide field">
                 <div class="ui left icon input">
                   <i class="lock icon"></i>
                   <input type="password" name="password" placeholder="Enter your password...">
                 </div>
               </div>
-              <button class="ui primary large button" type="submit">Sign in</button>
+              <div class="six wide field">
+                <button class="ui fluid primary large button" type="submit">Sign in</button>
+              </div>
+              <div class="six wide field">
+                <div class="ui floating message">
+                  Yet sign up? <a href="/signup">Sign up</a>
+                </div>
+              </div>
               <div class="ui error message"></div>
             </form>
-
-            <div class="ui message">
-              New to us? <a href="/signup">Sign Up</a>
-            </div>
   </div>
   <%- include('footer') %>

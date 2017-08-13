@@ -13,6 +13,10 @@ div.ui.menu .item.active {
   background: linear-gradient(to bottom, #055fb8, #095fb3);
 }
 
+div.ui.text {
+  margin-top: 90px;
+}
+
 
 /* button getstart */
 
@@ -31,8 +35,15 @@ div.hidden.content a:hover {
   text-align: center;
 }
 
-.content div {
+.ui.modal .content div {
   font-size: 1.1em;
   text-align: center;
   margin-bottom: 15px;
+}
+
+
+/* Sign in */
+
+.ui.form .wide.field {
+  margin: 0 auto 1em auto;
 }

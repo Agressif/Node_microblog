@@ -17,14 +17,15 @@
       <div class="item">
         <img src="/favicon.ico">
       </div>
-      <a class="item" href="/home">Home </a>
+      <a class="item" href="/home">Home</a>
       <% if (!user) { %>
-        <a class="item" href="/signin">Sign in </a>
-        <a class="item" href="/signup">Sign up </a>
+        <a class="item" href="/signin">Sign in</a>
+        <a class="item" href="/signup">Sign up</a>
         <% } else { %>
           <a class="item" href="/signout">Sign out </a>
+          <a class="item" href="/u/<%= user.name %>">User</a>
           <% } %>
-            <a class="right item" onclick="show()">About </a>
+            <a class="right item" onclick="show()">About</a>
             <div class="ui small modal">
               <div class="header">Microblog</div>
               <div class="content">

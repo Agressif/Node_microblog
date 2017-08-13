@@ -13,7 +13,8 @@ function Post(username, post, time) {
   if (time) {
     this.time = time;
   } else {
-    this.time = new Date();
+    var localTime = new Date();
+    this.time = localTime.toLocaleString();
   }
 };
 
@@ -39,6 +40,7 @@ Post.prototype.save = function save(callback) {
         mongodb.close();
         return callback(err);
       }
+      collection.ensureIndex('user', { unique: true });
       collection.insert(post, { safe: true }, function(err, post) {
         mongodb.close();
         callback(err, post);
@@ -75,8 +77,10 @@ Post.get = function get(username, callback) {
 
         var posts = [];
         docs.forEach(function(doc, index) {
-          var post = new Post(doc.user, doc.post, doc.time);
-          posts.push(post);
+          if (doc) {
+            var post = new Post(doc.user, doc.post, doc.time);
+            posts.push(post);
+          }
         });
         callback(null, posts);
       });
